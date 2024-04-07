@@ -1,6 +1,7 @@
 package pl.coderslab.cucumber.steps;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -46,5 +47,9 @@ public class HotelStep {
         WebElement submitButton = this.driver.findElement(By.xpath("//*[@id=\"submitAccount\"]"));
         submitButton.click();
     }
+    @Then("konto użytkownika zostało utworzone")
+    public void accountCreated() {
 
+        this.driver.quit();
+    }
 }
