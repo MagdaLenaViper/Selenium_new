@@ -15,6 +15,7 @@ import java.time.Duration;
 import java.util.Random;
 
 public class MyStoreRegistrationTest {
+
     private WebDriver driver;
 
     @Before
@@ -24,10 +25,10 @@ public class MyStoreRegistrationTest {
         this.driver.get("https://mystore-testlab.coderslab.pl/index.php");
     }
 
-//    @After
-//    public void tearDown(){
-//        this.driver.quit();
-//    }
+    @After
+    public void tearDown(){
+        this.driver.quit();
+    }
 
     @Test
     public void isPossibleToRegisterNewUser() {
@@ -49,12 +50,12 @@ public class MyStoreRegistrationTest {
 //        String generatedString = buffer.toString();
 
 
-        String[] city = {"Kraków", "Warszawa", "Poznań", "Wrocław", "Łódź"};
+        String[] cities = {"Kraków", "Warszawa", "Poznań", "Wrocław", "Łódź"};
 
         Random random = new Random();
-        int randomIndex = random.nextInt(city.length);
+        int randomIndex = random.nextInt(cities.length);
 
-        String userCity = city[randomIndex];
+        String userCity = cities[randomIndex];
 
         String userName = "test";
         String lastName = "test";
